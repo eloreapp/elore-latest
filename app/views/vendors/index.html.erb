@@ -1,0 +1,45 @@
+<div class="section mb-24">
+  <div class="container">
+    <%= render 'vendors/tabs' %>
+
+    <div class="columns is-multiline">
+      <% if @vendors.empty? %>
+        <%= render 'vendors/empty' %>
+      <% else %>
+        <% @vendors.each do |vendor| %>
+          <div class="column is-3 mt-16">
+            <%= link_to vendor_path(vendor), 'data-turbolinks': false do %>
+              <div class="card card-vendor is-borderless">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <%= image_tag vendor.image.url.to_s %>
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media-content">
+                    <p class="title is-size-5 has-text-black-bis"><%= vendor.name %></p>
+                  </div>
+                  <div class="content mt-8">
+                    <p class="has-text-grey"><%= vendor.body %></p>
+                    <p class="is-size-6 has-text-grey">In <span class="has-text-weight-semibold"><%= category_name(vendor.category_id) %></span></p>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="columns mt-24 has-text-centered">
+      <div class="column is-12">
+        <div class="apple_pagination">
+          <div class="page_info">
+            <%= page_entries_info @vendors, 'data-turbolinks': false %>
+          </div>
+          <%= will_paginate @vendors, :container => false, 'data-turbolinks': false %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

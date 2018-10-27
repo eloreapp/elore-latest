@@ -1,0 +1,22 @@
+// .navbar.is-light .navbar-start > a.navbar-item:hover {
+//   background-color: transparent;
+//   color: #000;
+// }
+
+.navbar.is-dark .navbar-start>a.navbar-item:hover {
+  background-color: transparent;
+}
+
+.navbar.is-dark .navbar-brand .navbar-link:hover, .navbar.is-dark .navbar-brand > a.navbar-item.is-active, .navbar.is-dark .navbar-brand > a.navbar-item:hover {
+  background-color: transparent;
+}
+
+.navbar {
+  -webkit-box-shadow: 0px 1px 0px 0px rgba(240, 240, 240, 1);
+  -moz-box-shadow: 0px 1px 0px 0px rgba(240, 240, 240, 1);
+  box-shadow: 0px 1px 0px 0px rgba(240, 240, 240, 1);
+
+  .field:not( :last-child ) {
+    margin-top: 0.75rem;
+  }
+}

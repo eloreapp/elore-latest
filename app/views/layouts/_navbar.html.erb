@@ -1,0 +1,51 @@
+<nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <%= link_to root_path, class: 'navbar-item', 'data-turbolinks': false do %>
+        <img src="/logo@2x.png">
+      <% end %>
+
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu" data-turbolinks="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-start">
+
+        <div class="navbar-item field">
+          <p class="control has-icons-right">
+            <input class="input" type="search" placeholder="Search...">
+            <span class="icon is-small is-right">
+              <%= icon( 'fas', 'search' ) %>
+            </span>
+          </p>
+        </div>
+
+        <%= link_to 'About', root_path, class: 'navbar-item', 'data-turbolinks': false %>
+        <%= link_to 'Help', root_path, class: 'navbar-item', 'data-turbolinks': false %>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            
+            <%# <a class="button is-light">
+              Log in
+            </a>
+
+            <a class="button is-primary">
+              <strong>Sign up</strong>
+            </a> %>
+
+            <%= link_to new_vendor_path, class: 'button custom-is-primary', 'data-turbolinks': false do %>
+              <%= icon( 'fas', 'plus' ) %> <span class="ml-8">Add Vendor</span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

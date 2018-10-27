@@ -1,0 +1,78 @@
+<%= simple_form_for @vendor do |f| %>
+  <div class="field">
+    <label class="label">Category</label>
+    <div class="select">
+      <%= f.collection_select :category_id, Category.all, :id, :name, { prompt: 'Choose a Category' }, {} %>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Name</label>
+    <div class="control">
+      <%= f.input_field :name, class: 'input', placeholder: 'Vendor name' %>
+    </div>
+  </div>
+  <div class="field">
+    <label class="label">Description</label>
+    <div class="control">
+      <%= f.text_area :body, class: 'textarea', placeholder: 'Type vendor description here...' %>
+    </div>
+  </div>
+  <div class="field">
+    <label class="label">Email Address</label>
+    <div class="control">
+      <%= f.input_field :email, class: 'input', placeholder: 'https://google.com' %>
+    </div>
+    <p class="help has-text-grey">Note: Include email address to make contact with the vendor easier.</p>
+  </div>
+  <div class="field">
+    <label class="label">Website URL (Optional)</label>
+    <div class="control">
+      <%= f.input_field :url, class: 'input', placeholder: 'https://google.com' %>
+    </div>
+  </div>
+  <div class="field">
+    <label class="label">Facebook URL (Optional)</label>
+    <div class="control">
+      <%= f.input_field :facebook_url, class: 'input', placeholder: 'https://google.com' %>
+    </div>
+  </div>
+  <div class="field">
+    <label class="label">Twitter URL (Optional)</label>
+    <div class="control">
+      <%= f.input_field :twitter_url, class: 'input', placeholder: 'https://google.com' %>
+    </div>
+  </div>
+  <div class="field">
+    <label class="label">Instagram URL (Optional)</label>
+    <div class="control">
+      <%= f.input_field :instagram_url, class: 'input', placeholder: 'https://google.com' %>
+    </div>
+  </div>
+
+  <div class="field mt-16">
+    <p class="help has-text-black">Image Preview</p>
+    <figure class="image is-96x96 mb-16 border-1">
+      <img id="img-prev" src="#" class="is-invisible" />
+    </figure>
+    <div class="file">
+      <label class="file-label">
+        <%= f.file_field :image, class: 'file-input', id: 'image-upload' %>
+        <span class="file-cta">
+          <span class="file-icon">
+            <%= icon( 'fas', 'upload' ) %>
+          </span>
+          <span class="file-label">
+            Choose a file
+          </span>
+        </span>
+      </label>
+    </div>
+
+    <%= f.hidden_field :image_cache %>
+  </div>
+
+  <div class="control mt-24">
+    <%= f.submit 'Submit', class: 'button is-primary' %>
+  </div>
+<% end %>
