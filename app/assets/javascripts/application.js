@@ -34,6 +34,16 @@ $(document).on('ready', function() {
   //   $('#tab').toggleClass('is-active');
   // });
 
+  // $('#tab-header li').on('click', function () {
+  //   // var tab = $(this).data('tab');
+
+  //   $('#tab-header li').removeClass('is-active');
+  //   $(this).addClass('is-active');
+
+  //   // $('#tab-content p').removeClass('is-active');
+  //   // $('p[data-content="' + tab + '"]').addClass('is-active');
+  // });
+
   // Image Preview After Upload
   function readURL(input) {
     if (input.files && input.files[0]) {

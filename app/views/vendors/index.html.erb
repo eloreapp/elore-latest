@@ -24,6 +24,16 @@
                     <p class="is-size-6 has-text-grey">In <span class="has-text-weight-semibold"><%= category_name(vendor.category_id) %></span></p>
                   </div>
                 </div>
+                <footer class="card-footer">
+                  <%# <a href="#" class="card-footer-item">Like</a> %>
+                  <%= link_to root_path, class: 'card-footer-item', 'data-turbolinks': false do %>
+                    <%= icon( 'far', 'heart' ) %>
+                  <% end %>
+                  <%# <a href="#" class="card-footer-item">Edit</a> %>
+                  <%= link_to root_path, class: 'card-footer-item', 'data-turbolinks': false do %>
+                    <%= icon( 'far', 'plus-square' ) %>
+                  <% end %>
+                </footer>
               </div>
             <% end %>
           </div>

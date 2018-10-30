@@ -1,10 +1,10 @@
-<div class="tabs mt-24 mb-24">
+<div class="tabs mt-24 mb-24" id="tab-header">
   <ul>
-    <li class="tab">
+    <li>
       <%= link_to 'All', root_path, class:'tab-link', 'data-turbolinks': false %>
     </li>
     <% Category.all.each do |category| %>
-      <li class="tab">
+      <li>
         <%= link_to category.name, vendors_path( category: category.name ), class: 'tab-link', 'data-turbolinks': false %>
       </li>
     <% end %>

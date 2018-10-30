@@ -12,11 +12,19 @@
 }
 
 .navbar {
-  -webkit-box-shadow: 0px 1px 0px 0px rgba(240, 240, 240, 1);
-  -moz-box-shadow: 0px 1px 0px 0px rgba(240, 240, 240, 1);
-  box-shadow: 0px 1px 0px 0px rgba(240, 240, 240, 1);
+  -webkit-box-shadow: 0px 3px 8px -4px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 3px 8px -4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 3px 8px -4px rgba(0, 0, 0, 0.15);
 
   .field:not( :last-child ) {
     margin-top: 0.75rem;
+  }
+
+  .navbar-end {
+    .image {
+      img {
+        width: auto;
+      }
+    }
   }
 }
