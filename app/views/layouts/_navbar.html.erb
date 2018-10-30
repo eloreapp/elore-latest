@@ -29,22 +29,35 @@
       </div>
 
       <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            
-            <%# <a class="button is-light">
-              Log in
-            </a>
+        <% unless current_user %>
+          <div class="navbar-item">
+            <div class="buttons">
+              
+              <%# <a class="button is-light">
+                Log in
+              </a>
 
-            <a class="button is-primary">
-              <strong>Sign up</strong>
-            </a> %>
+              <a class="button is-primary">
+                <strong>Sign up</strong>
+              </a> %>
 
-            <%= link_to new_vendor_path, class: 'button custom-is-primary', 'data-turbolinks': false do %>
-              <%= icon( 'fas', 'plus' ) %> <span class="ml-8">Add Vendor</span>
-            <% end %>
+              <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: 'button custom-is-primary', 'data-turbolinks': false %>
+            </div>
           </div>
-        </div>
+        <% else %>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              <%= current_user[:name] %>
+            </a>
+            <div class="navbar-dropdown">
+              <%= link_to new_vendor_path, class: 'navbar-item', 'data-turbolinks': false do %>
+                <%= icon( 'fas', 'plus' ) %> <span class="ml-8">Add Vendor</span>
+              <% end %>
+              <hr class="navbar-divider" />
+              <%= link_to "Logout", destroy_user_session_path, class: 'navbar-item', method: :delete, 'data-turbolinks': false %>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
