@@ -1,4 +1,6 @@
 class VendorsController < ApplicationController
+  # before_action :authenticate_user!, except: [:index, :show]
+
   def index
     if params[:category].blank?
       @vendors = Vendor.all.order( 'created_at DESC' ).paginate(:page => params[:page], :per_page => 12)
@@ -13,14 +15,15 @@ class VendorsController < ApplicationController
   end
 
   def new
+    # @vendor = current_user.vendors.build
     @vendor = Vendor.new
   end
 
   def create
-    @vendor = Vendor.new(vendor_params)
+    @vendor = current_user.vendors.build(vendor_params)
 
     if @vendor.save
-      redirect_to root_path
+      redirect_to root_path, notice: 'Vendor was successfully created!'
     else
       render 'new'
     end

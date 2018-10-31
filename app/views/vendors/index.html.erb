@@ -33,6 +33,11 @@
                   <%= link_to root_path, class: 'card-footer-item', 'data-turbolinks': false do %>
                     <%= icon( 'far', 'bookmark' ) %>
                   <% end %>
+                  <% if current_user %>
+                    <%= link_to root_path, class: 'card-footer-item', 'data-turbolinks': false do %>
+                      <%= icon( 'far', 'edit' ) %>
+                    <% end %>
+                  <% end %>
                 </footer>
               </div>
             <% end %>

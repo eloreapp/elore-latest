@@ -2,7 +2,7 @@
   <div class="container">
     <div class="detail-content-wrapper">
       <div class="columns">
-        <div class="column is-4 is-offset-1">
+        <div class="column is-5">
           <div class="box">
             <figure class="image is-square">
               <img src="<%= @vendor.image %>">
@@ -15,7 +15,8 @@
             <h1>
               <%= @vendor.name %>
             </h1>
-            <p class="is-size-6">
+            <p>by <span class="has-text-grey-light"><%= @vendor.user.name %></span></p>
+            <p class="is-size-6 has-text-grey">
               <%= @vendor.body %>
             </p>
           </div>
