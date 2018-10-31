@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.detail-content-wrapper {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
 .card-vendor {
   -webkit-box-shadow: 0px 3px 8px -4px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 3px 8px -4px rgba(0, 0, 0, 0.15);

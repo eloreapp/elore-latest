@@ -20,7 +20,7 @@
                     <p class="title is-size-5 has-text-black-bis"><%= vendor.name %></p>
                   </div>
                   <div class="content mt-8">
-                    <p class="has-text-grey"><%= vendor.body %></p>
+                    <p class="has-text-grey"><%= truncate_string(vendor.body) %></p>
                     <p class="is-size-6 has-text-grey">In <span class="has-text-weight-semibold"><%= category_name(vendor.category_id) %></span></p>
                   </div>
                 </div>

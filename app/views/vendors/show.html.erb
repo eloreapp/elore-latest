@@ -1,3 +1,26 @@
 <div class="section">
-  hello world
+  <div class="container">
+    <div class="detail-content-wrapper">
+      <div class="columns">
+        <div class="column is-4 is-offset-1">
+          <div class="box">
+            <figure class="image is-square">
+              <img src="<%= @vendor.image %>">
+            </figure>
+          </div>
+        </div>
+
+        <div class="column is-6 has-text-justified is-offset-1">
+          <div class="content is-medium">
+            <h1>
+              <%= @vendor.name %>
+            </h1>
+            <p class="is-size-6">
+              <%= @vendor.body %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
