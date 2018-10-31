@@ -24,7 +24,7 @@
           </p>
         </div>
 
-        <%= link_to 'About', root_path, class: 'navbar-item', 'data-turbolinks': false %>
+        <%= link_to 'About', static_pages_about_path, class: 'navbar-item', 'data-turbolinks': false %>
         <%= link_to 'Help', root_path, class: 'navbar-item', 'data-turbolinks': false %>
       </div>
 
@@ -47,13 +47,14 @@
         <% else %>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link" data-turbolinks="false">
-              <figure class="image">
+              <figure class="image inline">
                 <img src="<%= current_user[:image] %>" class="is-rounded">
               </figure>
+              <span class="ml-8 inline is-hidden-mobile"><%= current_user[:name] %></span>
             </a>
             <div class="navbar-dropdown">
               <%= link_to root_path, class: 'navbar-item', 'data-turbolinks': false do %>
-                <%= icon( 'fas', 'user-circle' ) %> <span class="ml-8"><%= current_user[:name] %></span>
+                <%= icon( 'fas', 'user-circle' ) %> <span class="ml-8">Profile</span>
               <% end %>
               <%= link_to new_vendor_path, class: 'navbar-item', 'data-turbolinks': false do %>
                 <%= icon( 'fas', 'plus' ) %> <span class="ml-8">Add Vendor</span>

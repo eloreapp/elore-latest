@@ -17,6 +17,7 @@
 @import "navbar.scss";
 @import "footer.scss";
 @import 'vendors.scss';
+@import 'static_pages.scss';
 @import 'empty.scss';
 
 // body {
@@ -67,6 +68,8 @@
 .mb-16 { margin-bottom: 16px; }
 
 .mb-24 { margin-bottom: 24px; }
+
+.mb-32 { margin-bottom: 32px; }
 
 .ml-8 { margin-left: 8px; }
 
