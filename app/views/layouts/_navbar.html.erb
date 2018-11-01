@@ -32,16 +32,8 @@
         <% unless current_user %>
           <div class="navbar-item">
             <div class="buttons">
-              
-              <%# <a class="button is-light">
-                Log in
-              </a>
-
-              <a class="button is-primary">
-                <strong>Sign up</strong>
-              </a> %>
-
-              <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: 'button custom-is-primary', 'data-turbolinks': false %>
+              <%# <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: 'button custom-is-primary', 'data-turbolinks': false %>
+              <%= link_to "Get Started", new_user_session_path, class: 'button custom-is-primary', 'data-turbolinks': false %>
             </div>
           </div>
         <% else %>

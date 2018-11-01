@@ -18,11 +18,26 @@
 @import "footer.scss";
 @import 'vendors.scss';
 @import 'static_pages.scss';
+@import 'users.scss';
 @import 'empty.scss';
 
 // body {
 //   background-color: #fafafa;
 // }
+
+// Buttons
+
+.is-fb-button {
+  background-color: #3b5998;
+  border: 1px solid #3b5998;
+  color: white;
+
+  &:hover {
+    background-color: #476bb8;
+    border: 1px solid #476bb8;
+    color: white;
+  }
+}
 
 .custom-is-primary {
   background-color: #ffabab;
@@ -54,6 +69,10 @@
 .mt-16 { margin-top: 16px; }
 
 .mt-24 { margin-top: 24px; }
+
+.mt-32 { margin-top: 32px; }
+
+.mt-5rem { margin-top: 5rem; }
 
 .mr-4 { margin-right: 4px; }
 
@@ -243,5 +262,43 @@
 
 .flickr_pagination .next_page {
   margin-left: 1em;
+}
+
+// HR Text
+
+.hr-text {
+  line-height: 1em;
+  position: relative;
+  outline: 0;
+  border: 0;
+  color: black;
+  text-align: center;
+  height: 1.5em;
+  opacity: .5;
+
+  &:before {
+    content: '';
+    // use the linear-gradient for the fading effect
+    // use a solid background color for a solid bar
+    background: linear-gradient(to right, transparent, #818078, transparent);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+  }
+
+  &:after {
+    content: attr(data-content);
+    position: relative;
+    display: inline-block;
+    color: black;
+
+    padding: 0 .5em;
+    line-height: 1.5em;
+    // this is really the only tricky part, you need to specify the background color of the container element...
+    color: #818078;
+    background-color: #fcfcfa;
+  }
 }
 

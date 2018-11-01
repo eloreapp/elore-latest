@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
-  get 'static_pages/about'
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  # Static
+  get 'static_pages/about'
+
+  # Devise
+  devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout' }, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
+  # Resources
   resources :vendors
+
+  # Root
   root 'vendors#index'
 end
