@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   has_many :vendors
 
+  mount_uploader :avatar, AvatarUploader
+
 
   def self.new_with_session(params, session)
     super.tap do |user|

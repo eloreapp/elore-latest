@@ -40,7 +40,11 @@
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link" data-turbolinks="false">
               <figure class="image inline">
-                <img src="<%= current_user[:image] %>" class="is-rounded">
+                <% if user_signed_in? && current_user.provider == 'facebook' %>
+                  <img src="<%= current_user[:image] %>" class="is-rounded">
+                <% else %>
+                  <img src="<%= current_user.avatar.url %>" class="is-rounded">
+                <% end %>
               </figure>
               <span class="ml-8 inline is-hidden-mobile">
                 <% if user_signed_in? && current_user.provider == 'facebook' %>

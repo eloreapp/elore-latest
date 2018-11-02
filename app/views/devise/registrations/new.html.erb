@@ -8,6 +8,28 @@
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= f.error_notification %>
 
+            <div class="field mt-16">
+              <p class="help has-text-black">Image Preview</p>
+              <figure class="image is-96x96 mb-16 border-1">
+                <img id="img-prev" src="#" class="is-invisible" />
+              </figure>
+              <div class="file">
+                <label class="file-label">
+                  <%= f.file_field :avatar, class: 'file-input', id: 'image-upload' %>
+                  <span class="file-cta">
+                    <span class="file-icon">
+                      <%= icon( 'fas', 'upload' ) %>
+                    </span>
+                    <span class="file-label">
+                      Choose a file
+                    </span>
+                  </span>
+                </label>
+              </div>
+
+              <%= f.hidden_field :avatar_cache %>
+            </div>
+
             <div class="field">
               <div class="control">
                 <%= f.input_field :username, placeholder: 'Username', required: true, autofocus: true, class: 'input' %>
