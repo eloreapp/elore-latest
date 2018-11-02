@@ -1,5 +1,5 @@
 class VendorsController < ApplicationController
-  # before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     if params[:category].blank?
@@ -15,13 +15,13 @@ class VendorsController < ApplicationController
   end
 
   def new
-    # @vendor = current_user.vendors.build
-    @vendor = Vendor.new
+    @vendor = current_user.vendors.build
+    # @vendor = Vendor.new
   end
 
   def create
     @vendor = current_user.vendors.build(vendor_params)
-
+    
     if @vendor.save
       redirect_to root_path, notice: 'Vendor was successfully created!'
     else

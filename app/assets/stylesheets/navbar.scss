@@ -28,3 +28,10 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .is-mobile-button {
+    display: block;
+    width: 100%;
+  }
+}
