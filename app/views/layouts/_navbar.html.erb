@@ -42,7 +42,15 @@
               <figure class="image inline">
                 <img src="<%= current_user[:image] %>" class="is-rounded">
               </figure>
-              <span class="ml-8 inline is-hidden-mobile"><%= current_user[:name] %></span>
+              <span class="ml-8 inline is-hidden-mobile">
+                <% if user_signed_in? && current_user.provider == 'facebook' %>
+                  <%= current_user[:name]  %>
+                <% else %>
+                  <%= current_user.username %>
+
+                  <%= puts current_user.username %>
+                <% end %>
+              </span>
             </a>
             <div class="navbar-dropdown">
               <%= link_to root_path, class: 'navbar-item', 'data-turbolinks': false do %>
