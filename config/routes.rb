@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   # Resources
   resources :vendors
+  resources :users
 
   # Root
   root 'vendors#index'

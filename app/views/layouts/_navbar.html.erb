@@ -57,7 +57,7 @@
               </span>
             </a>
             <div class="navbar-dropdown">
-              <%= link_to root_path, class: 'navbar-item', 'data-turbolinks': false do %>
+              <%= link_to user_path( current_user.id ), class: 'navbar-item', 'data-turbolinks': false do %>
                 <%= icon( 'fas', 'user-circle' ) %> <span class="ml-8">Profile</span>
               <% end %>
               <%= link_to new_vendor_path, class: 'navbar-item', 'data-turbolinks': false do %>

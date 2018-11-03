@@ -60,9 +60,21 @@
 
 // Helpers
 
+.center {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -150px;
+}
+
 .has-border-bottom { border-bottom: 1px solid #f2f2f2; }
 
 .border-1 { border: 1px solid #f2f2f2; }
+
+.m-auto { margin: 0 auto; }
 
 .m-8 { margin: 8px; }
 

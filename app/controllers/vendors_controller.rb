@@ -21,7 +21,7 @@ class VendorsController < ApplicationController
 
   def create
     @vendor = current_user.vendors.build(vendor_params)
-    
+
     if @vendor.save
       redirect_to root_path, notice: 'Vendor was successfully created!'
     else

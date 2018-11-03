@@ -1,0 +1,78 @@
+<section class="hero is-medium has-text-centered has-background-white">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-4 is-offset-4">
+          <figure class="image is-64x64 m-auto mb-24">
+            <% if @user.provider == 'facebook' %>
+              <%= image_tag @user.image, class: 'is-rounded' %>
+            <% else %>
+              <img src="<%= @user.avatar.url %>" class="is-rounded">
+            <% end %>
+          </figure>
+
+          <% if @user.provider == 'facebook' %>
+            <h1 class="title"><%= @user[:name] %></h1>
+          <% else %>
+            <h1 class="title"><%= @user.username %></h1>
+          <% end %>
+
+          <% if current_user == @user %>
+            <%= link_to 'Edit Profile', edit_user_registration_path, class: 'button is-dark' %>
+          <% else %>
+            <%= link_to 'Follow', root_path, class: 'button is-dark' %>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section is-light">
+  <div class="container">
+    <div class="columns is-multiline">
+      <% if current_user.vendors.empty? %>
+        <%= render 'vendors/empty' %>
+      <% else %>
+        <% current_user.vendors.each do |vendor| %>
+          <div class="column is-3 mt-16">
+            <%= link_to vendor_path(vendor), 'data-turbolinks': false do %>
+              <div class="card card-vendor is-borderless">
+                <div class="card-image">
+                  <figure class="image">
+                    <%= image_tag vendor.image.url.to_s %>
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media-content">
+                    <p class="title is-size-5 has-text-black-bis"><%= vendor.name %></p>
+                  </div>
+                  <div class="content mt-8">
+                    <p class="has-text-grey"><%= truncate_string(vendor.body) %></p>
+                    <p class="is-size-6 has-text-grey">In <span class="has-text-weight-semibold"><%= category_name(vendor.category_id) %></span></p>
+                  </div>
+                </div>
+                <footer class="card-footer">
+                  <%# <a href="#" class="card-footer-item">Like</a> %>
+                  <%= link_to root_path, class: 'card-footer-item', 'data-turbolinks': false do %>
+                    <%= icon( 'far', 'heart' ) %>
+                  <% end %>
+                  <%# <a href="#" class="card-footer-item">Edit</a> %>
+                  <%= link_to root_path, class: 'card-footer-item', 'data-turbolinks': false do %>
+                    <%= icon( 'far', 'bookmark' ) %>
+                  <% end %>
+                  <% if current_user %>
+                    <%= link_to root_path, class: 'card-footer-item', 'data-turbolinks': false do %>
+                      <%= icon( 'far', 'edit' ) %>
+                    <% end %>
+                  <% end %>
+                </footer>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</section>

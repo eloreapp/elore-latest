@@ -21,6 +21,14 @@
                   </div>
                   <div class="content mt-8">
                     <p class="has-text-grey"><%= truncate_string(vendor.body) %></p>
+                    <% if vendor.user.provider == 'facebook' %>
+                      <p class="has-text-grey"> By: <%= link_to vendor.user.name, user_path(vendor.user_id) %></p>
+                    <% else %>
+                      <p class="has-text-grey"> By: <%= link_to vendor.user.username, user_path(vendor.user_id) %></p>
+                    <% end %>
+                    <p class="has-text-grey is-size-6">
+                      <%# Posted by <span class="has-text-weight-semibold"><%#= vendor.user.name %>
+                    </p>
                     <p class="is-size-6 has-text-grey">In <span class="has-text-weight-semibold"><%= category_name(vendor.category_id) %></span></p>
                   </div>
                 </div>
@@ -32,11 +40,6 @@
                   <%# <a href="#" class="card-footer-item">Edit</a> %>
                   <%= link_to root_path, class: 'card-footer-item', 'data-turbolinks': false do %>
                     <%= icon( 'far', 'bookmark' ) %>
-                  <% end %>
-                  <% if current_user %>
-                    <%= link_to root_path, class: 'card-footer-item', 'data-turbolinks': false do %>
-                      <%= icon( 'far', 'edit' ) %>
-                    <% end %>
                   <% end %>
                 </footer>
               </div>
