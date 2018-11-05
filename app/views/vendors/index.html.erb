@@ -22,9 +22,9 @@
                   <div class="content mt-8">
                     <p class="has-text-grey"><%= truncate_string(vendor.body) %></p>
                     <% if vendor.user.provider == 'facebook' %>
-                      <p class="has-text-grey"> By: <%= link_to vendor.user.name, user_path(vendor.user_id) %></p>
+                      <p class="has-text-grey"> By: @<%= link_to vendor.user.name, user_path(vendor.user_id) %></p>
                     <% else %>
-                      <p class="has-text-grey"> By: <%= link_to vendor.user.username, user_path(vendor.user_id) %></p>
+                      <p class="has-text-grey"> By: @<%= link_to vendor.user.username, user_path(vendor.user_id) %></p>
                     <% end %>
                     <p class="has-text-grey is-size-6">
                       <%# Posted by <span class="has-text-weight-semibold"><%#= vendor.user.name %>

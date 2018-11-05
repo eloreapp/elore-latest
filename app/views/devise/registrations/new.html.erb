@@ -9,11 +9,11 @@
             <%= f.error_notification %>
 
             <div class="field mt-16">
-              <p class="help has-text-black">Image Preview</p>
-              <figure class="image is-96x96 mb-16 border-1">
+              <p class="help has-text-black">Avatar Preview</p>
+              <figure class="image is-96x96 mb-16 border-1 ml-auto mr-auto">
                 <img id="img-prev" src="#" class="is-invisible" />
               </figure>
-              <div class="file">
+              <div class="file flex-center mb-32">
                 <label class="file-label">
                   <%= f.file_field :avatar, class: 'file-input', id: 'image-upload' %>
                   <span class="file-cta">
@@ -21,7 +21,7 @@
                       <%= icon( 'fas', 'upload' ) %>
                     </span>
                     <span class="file-label">
-                      Choose a file
+                      Upload Avatar
                     </span>
                   </span>
                 </label>
@@ -57,14 +57,6 @@
             <div class="form-actions">
               <%= f.button :submit, "Register", class: 'button custom-is-primary is-fullwidth' %>
             </div>
-            
-            <hr class="hr-text" data-content="OR" />
-
-            <%- if devise_mapping.omniauthable? %>
-              <%- resource_class.omniauth_providers.each do |provider| %>
-                <%= link_to "Log in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class: 'button is-fb-button is-fullwidth' %>
-              <% end -%>
-            <% end -%>
           <% end %>
         </div>
         <%= render "devise/shared/links" %>

@@ -76,6 +76,10 @@
 
 .m-auto { margin: 0 auto; }
 
+.ml-auto { margin-left: auto; }
+
+.mr-auto { margin-right: auto; }
+
 .m-8 { margin: 8px; }
 
 .m-16 { margin: 16px; }
@@ -113,6 +117,11 @@
 .ml-16 { margin-left: 16px; }
 
 .ml-24 { margin-left: 24px; }
+
+
+// Flex
+
+.flex-center { justify-content: center; }
 
 
 // Pagination

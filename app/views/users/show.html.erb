@@ -12,9 +12,9 @@
           </figure>
 
           <% if @user.provider == 'facebook' %>
-            <h1 class="title"><%= @user[:name] %></h1>
+            <h1 class="title">@<%= @user[:name] %></h1>
           <% else %>
-            <h1 class="title"><%= @user.username %></h1>
+            <h1 class="title">@<%= @user.username %></h1>
           <% end %>
 
           <% if current_user == @user %>
@@ -63,7 +63,7 @@
                     <%= icon( 'far', 'bookmark' ) %>
                   <% end %>
                   <% if current_user %>
-                    <%= link_to root_path, class: 'card-footer-item', 'data-turbolinks': false do %>
+                    <%= link_to edit_vendor_path( vendor.id ), class: 'card-footer-item', 'data-turbolinks': false do %>
                       <%= icon( 'far', 'edit' ) %>
                     <% end %>
                   <% end %>

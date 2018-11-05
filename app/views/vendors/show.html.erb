@@ -15,7 +15,14 @@
             <h1>
               <%= @vendor.name %>
             </h1>
-            <p class="is-size-6 mb-24">Posted by <span class="has-text-grey-light"><%= @vendor.user.name %></span></p>
+            <p class="is-size-6 mb-24">
+              Posted by 
+              <%= link_to user_path(@vendor.user_id), 'data-turbolinks': false do %>
+                <span class="has-text-grey-light">
+                  <%= @vendor.user.username %>
+                </span>
+              <% end %>
+            </p>
             <p class="is-size-6 has-text-grey">
               <%= @vendor.body %>
             </p>

@@ -30,9 +30,17 @@ class VendorsController < ApplicationController
   end
 
   def edit
+    @vendor = Vendor.find( params[:id] )
   end
 
   def update
+    @vendor = Vendor.find( params[:id] )
+
+    if @vendor.update(vendor_params)
+      redirect_to @vendor
+    else
+      render 'edit'
+    end
   end
 
   def destroy

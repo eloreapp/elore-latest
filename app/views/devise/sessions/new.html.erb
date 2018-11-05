@@ -30,13 +30,7 @@
               <%= f.button :submit, "Log in", class: 'button custom-is-primary is-fullwidth' %>
             </div>
 
-            <hr class="hr-text" data-content="OR" />
-
-            <%- if devise_mapping.omniauthable? %>
-              <%- resource_class.omniauth_providers.each do |provider| %>
-                <%= link_to "Log in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class: 'button is-fb-button is-fullwidth' %>
-              <% end -%>
-            <% end -%>
+            
           <% end %>
         </div>
         <%= render "devise/shared/links" %>
