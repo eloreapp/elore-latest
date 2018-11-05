@@ -26,4 +26,8 @@ class User < ApplicationRecord
       user.image = auth.info.image # assuming the user model has an image
     end
   end
+
+  def full_name
+    return "#{first_name} #{ last_name }".strip if ( first_name || last_name )
+  end
 end

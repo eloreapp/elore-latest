@@ -8,13 +8,18 @@
             <%= f.error_notification %>
 
             <div class="field mt-16">
-              <p class="help has-text-black">Image Preview</p>
+              <p class="help has-text-black">Avatar Preview</p>
               <figure class="image is-96x96 mb-16 border-1">
-                <img id="img-prev" src="#" class="is-invisible" />
+                <% if @user.image? %>
+                  <%= image_tag(@user.image_url) %>
+                <% else %>
+                  <img id="img-prev" src="#" class="is-invisible" />
+                <% end %>
               </figure>
               <div class="file">
                 <label class="file-label">
                   <%= f.file_field :avatar, class: 'file-input', id: 'image-upload' %>
+                  <%= f.hidden_field :avatar_cache %>
                   <span class="file-cta">
                     <span class="file-icon">
                       <%= icon( 'fas', 'upload' ) %>
@@ -25,8 +30,22 @@
                   </span>
                 </label>
               </div>
+            </div>
 
-              <%= f.hidden_field :avatar_cache %>
+            <div class="field is-horizontal">
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <%= f.input_field :first_name, placeholder: 'First Name', required: true, autofocus: true, class: 'input' %>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <div class="control">
+                    <%= f.input_field :last_name, placeholder: 'Last Name', required: true, autofocus: true, class: 'input' %>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="field">

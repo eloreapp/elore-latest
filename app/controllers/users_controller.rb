@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+    render root_path
   end
 
   def show

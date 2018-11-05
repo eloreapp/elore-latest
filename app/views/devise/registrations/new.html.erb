@@ -29,6 +29,22 @@
 
               <%= f.hidden_field :avatar_cache %>
             </div>
+            
+            <div class="field is-horizontal">
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <%= f.input_field :first_name, placeholder: 'First Name', required: true, autofocus: true, class: 'input' %>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <div class="control">
+                    <%= f.input_field :last_name, placeholder: 'Last Name', required: true, autofocus: true, class: 'input' %>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <div class="field">
               <div class="control">
